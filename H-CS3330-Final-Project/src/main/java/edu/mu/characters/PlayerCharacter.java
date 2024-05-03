@@ -8,14 +8,16 @@ import edu.mu.characters.playerclasses.*;
 public class PlayerCharacter extends Character{
 	private HashMap<String, Integer> stats;
 	private HashMap<String, String> inventory;
+	private PlayerClassSuper playerClass;
 	private int exp;
 	
 	
 	
-	public PlayerCharacter(String name, Races race, PlayerClassSuper playerClass, HashMap<String, Integer> stats, HashMap<String,String> inventory) {
-		super(name, race, playerClass);
+	public PlayerCharacter(String name, Races race, PlayerClassSuper playerClass, int health, HashMap<String, Integer> stats, HashMap<String,String> inventory) {
+		super(name, race, health);
 		this.stats = stats;
 		this.inventory = inventory;
+		this.playerClass = playerClass;
 		
 	}
 

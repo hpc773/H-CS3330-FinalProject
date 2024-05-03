@@ -12,7 +12,7 @@ public class CharacterCreator{
 		String name;
 		Races race;
 		PlayerClassSuper playerClass = null;
-		//HashMap<String, Integer> stats = new HashMap<String, Integer>();
+		
 		
 		System.out.println("Welcome to the character creator.");
 		
@@ -44,7 +44,7 @@ public class CharacterCreator{
 		
 		
 		
-		return new PlayerCharacter (name, race, playerClass, playerClass.getStats(), playerClass.getInventory());
+		return new PlayerCharacter (name, race, playerClass, 10, playerClass.getStats(), playerClass.getInventory()); // maybe change starting health to be class dependent? idk.
 		
 		
 		

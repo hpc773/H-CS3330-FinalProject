@@ -10,16 +10,26 @@ abstract class Character {
 	protected String name;
 	protected Races race;
 	//private String description;
-	protected PlayerClassSuper playerClass;
+
 	//probably going to reduce the number of classes available for simplicity, probably only 4-5 or so
 	//fighter, wizard, rogue, ranger? paladin?
 	//private HashMap<String, Integer> stats;
-	//ADD HEALTH STUFF
+	protected int health;
 	
-	public Character(String name, Races race, PlayerClassSuper playerClass) {
+	public Character(String name, Races race, int health) {
 		this.name = name;
 		this.race = race;
-		this.playerClass = playerClass;
+		
+		this.health = health;
+	}
+	public void setHealth(int newHealth) {
+		this.health = newHealth;
+	}
+	public void incrementHealth(int incHealth) {
+		this.health += incHealth;
+	}
+	public int getHealth() {
+		return this.health;
 	}
 	
 	
