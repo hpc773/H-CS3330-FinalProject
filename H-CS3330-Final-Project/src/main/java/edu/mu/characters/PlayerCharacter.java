@@ -8,6 +8,7 @@ import edu.mu.characters.playerclasses.*;
 public class PlayerCharacter extends Character{
 	private HashMap<String, Integer> stats;
 	private HashMap<String, String> inventory;
+	private int exp;
 	
 	
 	
@@ -25,6 +26,16 @@ public class PlayerCharacter extends Character{
 	}
 	public void printInventory() {
 		inventory.forEach((k,v)->System.out.println(k+": "+ v));
+	}
+	
+	public void setExp(int newExp) {
+		this.exp = newExp;
+	}
+	public void incrementExp(int incExp) {
+		this.exp += incExp;
+	}
+	public int getExp() {
+		return this.exp;
 	}
 
 
