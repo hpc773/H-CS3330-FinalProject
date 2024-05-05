@@ -18,7 +18,7 @@ abstract class Entity {
 		return name;
 	}
 
-	private void setName(String name) {
+	protected void setName(String name) {
 		this.name = name;
 	}
 
@@ -26,7 +26,7 @@ abstract class Entity {
 		return health;
 	}
 
-	private void setHealth(int health) {
+	protected void setHealth(int health) {
 		this.health = health;
 	}
 
@@ -34,7 +34,7 @@ abstract class Entity {
 		return attack;
 	}
 
-	private void setAttack(int attack) {
+	protected void setAttack(int attack) {
 		this.attack = attack;
 	}
 
@@ -42,7 +42,7 @@ abstract class Entity {
 		return expValue;
 	}
 
-	private void setExpValue(int expValue) {
+	protected void setExpValue(int expValue) {
 		this.expValue = expValue;
 	}
 
@@ -50,10 +50,12 @@ abstract class Entity {
 		return moneyValue;
 	}
 
-	private void setMoneyValue(int moneyValue) {
+	protected void setMoneyValue(int moneyValue) {
 		this.moneyValue = moneyValue;
 	}
 	
 	public abstract int specialAttack();
+	
+	protected abstract void entityPowerLevel(Entity NPC);
 	
 }
