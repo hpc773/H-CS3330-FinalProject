@@ -8,6 +8,7 @@ abstract class Entity {
 	private int regularAttackValue;
 	private int expValue;
 	private int moneyValue;
+	NpcType Type;
 	
 
 	public Entity() {
@@ -52,6 +53,14 @@ abstract class Entity {
 
 	protected void setMoneyValue(int moneyValue) {
 		this.moneyValue = moneyValue;
+	}
+	
+	public NpcType getType() {
+		return Type;
+	}
+
+	public void setType(NpcType type) {
+		Type = type;
 	}
 	
 	protected boolean attackCharacter(PlayerCharacter character) {
