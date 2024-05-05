@@ -1,20 +1,22 @@
 package edu.mu.npcs;
 
+/** Factory class to generate NPCs
+ * 
+ * @author skylarperry
+ */
 public class NpcFactory {
-	NpcFactory(){
-		
-	}
-	
 	Entity spawnNPC(NpcType type){
+		Entity newNpc;
 		switch (type){
 		case ZOMBIE:
-			return new Zombie();
+			newNpc = new Zombie();
 		case SKELETON:
-			return new Skeleton();
+			newNpc = new Skeleton();
 		case HUMAN:
-			return new Human();
+			newNpc = new Human();
 		case UNIQUE:
-			return new Unique();
+			newNpc = new Unique();
 		}
+		return newNpc;
 	}
 }

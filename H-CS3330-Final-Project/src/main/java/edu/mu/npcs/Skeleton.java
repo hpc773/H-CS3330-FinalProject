@@ -1,6 +1,10 @@
 package edu.mu.npcs;
 import java.util.Random;
 
+/**Skeleton enemy class
+ * 
+ * @author skylarperry
+ */
 public class Skeleton extends Entity {
 	
 	public Skeleton(){
@@ -11,7 +15,10 @@ public class Skeleton extends Entity {
 			
 
 	@Override
-	// special attack unique to skeletons that has a chance to stun the player.
+	/**Special attack that is unique to the skeleton enemy class, it has a chance to stun the player
+	 * 
+	 * @return returns the damage that was done with the attack
+	 */
 	public int specialAttack() {
 		int stunResist = 75;
 		int attackDamage = 2;
@@ -45,8 +52,10 @@ public class Skeleton extends Entity {
 		return attackDamage;
 	}
 
+	/**Method that randomly generates the power level of the spawned enemy
+	 * 
+	 */
 	@Override
-	//Method that generates the power level of the new Skeleton
 	protected void entityPowerLevel(Entity NPC) {
 		// TODO adjust values to better fit game balance
 		Random RNG = new Random();

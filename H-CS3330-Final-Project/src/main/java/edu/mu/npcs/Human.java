@@ -15,6 +15,9 @@ public class Human extends Entity {
 		return 0;
 	}
 
+	/**Method that randomly generates the power level of the spawned enemy
+	 * 
+	 */
 	@Override
 	protected void entityPowerLevel(Entity NPC) {
 		// TODO Auto-generated method stub

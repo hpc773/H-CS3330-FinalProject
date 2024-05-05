@@ -10,8 +10,14 @@ public class Zombie extends Entity {
 	}
 
 	@Override
-	//special attack unique to Zombies that can give disease to the player
+	/**Special attack that is unique to the zombie enemy class, it has a chance to give the player character a disease
+	 * 
+	 * the disease is a poison like effect that will do damage every turn
+	 * 
+	 * @return the attack damage that the attack does, which is always five
+	 */
 	public int specialAttack() {
+		int attackDamage = 5;
 		System.out.println("The"+getName() +"Zombie lunges at you with it's gangrenous mouth agape!");
 		int diseaseResist = 50;
 		Random RNG = new Random();
@@ -26,9 +32,12 @@ public class Zombie extends Entity {
 			System.out.println("It bites into your armor, it seems you've avoided sickness this time.");
 		}
 		
-		return 0;
+		return attackDamage;
 	}
 
+	/**Method that randomly generates the power level of the spawned enemy
+	 * 
+	 */
 	@Override
 	protected void entityPowerLevel(Entity NPC) {
 		// TODO Auto-generated method stub
