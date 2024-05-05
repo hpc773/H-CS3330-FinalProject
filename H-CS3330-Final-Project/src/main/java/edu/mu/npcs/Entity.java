@@ -69,6 +69,19 @@ abstract class Entity {
 		return true;
 	}
 	
+	public boolean perish(PlayerCharacter PC) {
+		grantExp(PC);
+		
+		return true;
+	}
+	
+	private int grantExp(PlayerCharacter PC) {
+		PC.setExp(PC.getExp()+ this.getExpValue());
+		
+		return PC.getExp();
+	}
+	
+	
 	public abstract int specialAttack();
 	
 	protected abstract void entityPowerLevel(Entity NPC);

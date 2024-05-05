@@ -53,45 +53,45 @@ public class Skeleton extends Entity {
  		int powerLevel = RNG.nextInt(100);
 
  		if(powerLevel == 100) {
- 			setName("King");
- 			setHealth(50);
- 			setExpValue(50);
- 			setMoneyValue(100);
+ 			NPC.setName("King");
+ 			NPC.setHealth(50);
+ 			NPC.setExpValue(50);
+ 			NPC.setMoneyValue(100);
  		}
 
  		else if(powerLevel >= 75) {
- 			setName("Knight");
- 			setHealth(40);
- 			setExpValue(35);
- 			setMoneyValue(75);
+ 			NPC.setName("Knight");
+ 			NPC.setHealth(40);
+ 			NPC.setExpValue(35);
+ 			NPC.setMoneyValue(75);
  		}
 
  		else if(powerLevel >= 50 ) {
- 			setName("Squire");
- 			setHealth(30);
- 			setExpValue(25);
- 			setMoneyValue(50);
+ 			NPC.setName("Squire");
+ 			NPC.setHealth(30);
+ 			NPC.setExpValue(25);
+ 			NPC.setMoneyValue(50);
  		}
 
  		else if(powerLevel >= 25 ) {
- 			setName("Commoner");
- 			setHealth(20);
- 			setExpValue(15);
- 			setMoneyValue(25);
+ 			NPC.setName("Commoner");
+ 			NPC.setHealth(20);
+ 			NPC.setExpValue(15);
+ 			NPC.setMoneyValue(25);
  		}
 
  		else if(powerLevel >= 0) {
- 			setName("Pauper");
- 			setHealth(10);
- 			setExpValue(10);
- 			setMoneyValue(10);
+ 			NPC.setName("Pauper");
+ 			NPC.setHealth(10);
+ 			NPC.setExpValue(10);
+ 			NPC.setMoneyValue(10);
  		}
 
  		else if(powerLevel == 0) {
- 			setName("Runt");
- 			setHealth(1);
- 			setExpValue(1);
- 			setMoneyValue(1);		
+ 			NPC.setName("Runt");
+ 			NPC.setHealth(1);
+ 			NPC.setExpValue(1);
+ 			NPC.setMoneyValue(1);		
  		}
  	}
  }
