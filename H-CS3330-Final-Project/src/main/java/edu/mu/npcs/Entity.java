@@ -5,7 +5,7 @@ abstract class Entity {
 	
 	private String name;
 	private int health;
-	private int attack;
+	private int regularAttackValue;
 	private int expValue;
 	private int moneyValue;
 	
@@ -31,11 +31,11 @@ abstract class Entity {
 	}
 
 	public int getAttack() {
-		return attack;
+		return regularAttackValue;
 	}
 
 	protected void setAttack(int attack) {
-		this.attack = attack;
+		this.regularAttackValue = attack;
 	}
 
 	public int getExpValue() {
@@ -52,6 +52,12 @@ abstract class Entity {
 
 	protected void setMoneyValue(int moneyValue) {
 		this.moneyValue = moneyValue;
+	}
+	
+	protected boolean attackCharacter(PlayerCharacter character) {
+		
+		character.setHealth(character.getHealth() - regularAttackValue);
+		return true;
 	}
 	
 	public abstract int specialAttack();
