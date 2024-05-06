@@ -14,6 +14,7 @@ abstract class Character {
 	public Character(String name, Races race ) {
 		this.name = name;
 		this.race = race;
+		
 
 	}
 	public Character() {

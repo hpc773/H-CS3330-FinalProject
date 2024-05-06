@@ -16,7 +16,7 @@ public class PlayerCharacter extends Character{
 	private int exp;
 	private int initiative;
 	private int defense;
-	private HashMap<String, String> inventory = new HashMap<String, String>();
+	//private HashMap<String, String> inventory = new HashMap<String, String>();
 
 
 	
@@ -37,22 +37,16 @@ public class PlayerCharacter extends Character{
 		
 		
 	}
-	public PlayerCharacter() {
-		
-	}
 
-	public void printStats() {
-		stats.forEach((k,v)->System.out.println(k+": "+ v));
-	}
+
+
 	
 	
 	
 	public HashMap<String, Integer> getStats() {
 		return stats;
 	}
-	public void setStats(HashMap<String, Integer> stats) {
-		this.stats = stats;
-	}
+
 	
 	
 	public PlayerClassSuper getPlayerClass() {
@@ -84,12 +78,12 @@ public class PlayerCharacter extends Character{
 	public void setDefense(int defense) {
 		this.defense = defense;
 	}
-	public HashMap<String, String> getInventory() {
+	/*public HashMap<String, String> getInventory() {
 		return inventory;
 	}
 	public void setInventory(HashMap<String, String> inventory) {
 		this.inventory = inventory;
-	}
+	}*/
 	public Weapons getWeapon() {
 		return weapon;
 	}
@@ -118,8 +112,8 @@ public class PlayerCharacter extends Character{
 	@Override
 	public String toString() {
 		return "PlayerCharacter [stats=" + stats + ", weapon=" + weapon + ", armor=" + armor + ", playerClass="
-				+ playerClass + ", exp=" + exp + ", initiative=" + initiative + ", defense=" + defense + ", inventory="
-				+ inventory + ", name=" + name + ", race=" + race + ", health=" + health + "]";
+				+ playerClass + ", exp=" + exp + ", initiative=" + initiative + ", defense=" + defense + /*", inventory="
+				+ inventory +*/ ", name=" + name + ", race=" + race + ", health=" + health + "]";
 	}
 	
 	
