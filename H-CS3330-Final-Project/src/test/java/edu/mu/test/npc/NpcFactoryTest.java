@@ -33,7 +33,8 @@ class NpcFactoryTest {
 	
 	@Test
 	void ZombieTest(){
-		NpcType expectedType = NpcType.ZOMBIE;		
+		NpcType expectedType = NpcType.ZOMBIE;	
+		
 		npc = factory.spawnNPC(NpcType.ZOMBIE);
 		assertEquals(npc.getType(), expectedType);
 	}

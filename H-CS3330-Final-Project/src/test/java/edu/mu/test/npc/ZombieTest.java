@@ -39,5 +39,12 @@ class ZombieTest {
 		
 		assertEquals(pc.getHealth(), 5);
 	}
+	
+	@Test
+	void testAttack() {
+		int expecetedValue = pc.getHealth() - zombie.getAttack();
+		zombie.attackCharacter(pc);
+		assertEquals(expecetedValue, pc.getHealth());
+	}
 
 }

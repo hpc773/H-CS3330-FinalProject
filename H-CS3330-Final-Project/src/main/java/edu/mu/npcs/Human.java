@@ -7,7 +7,7 @@ import edu.mu.characters.*;
 
 public class Human extends Entity {
 
-	Human(){
+	public Human(){
 		this.setType(NpcType.HUMAN);
 		entityPowerLevel(this);
 	}
@@ -15,7 +15,7 @@ public class Human extends Entity {
 	@Override
 	public int specialAttack(PlayerCharacter PC) {
 		
-		System.out.println("The Pirate" + getName() + "viciouslt attakc with his cutlass!");
+		System.out.println("The Pirate " + getName() + " viciously attacks with their cutlass!");
 		
 		return 0;
 	}
@@ -32,6 +32,7 @@ public class Human extends Entity {
  			NPC.setName("Captain");
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
+ 			NPC.setAttack(6);
  			return true;
  		}
 
@@ -39,6 +40,7 @@ public class Human extends Entity {
  			NPC.setName("First Mate");
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
+ 			NPC.setAttack(5);
  			return true;
  		}
 
@@ -46,6 +48,7 @@ public class Human extends Entity {
  			NPC.setName("Rapscallion");
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
+ 			NPC.setAttack(4);
  			return true;
  		}
 
@@ -53,6 +56,7 @@ public class Human extends Entity {
  			NPC.setName("Crewmate");
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
+ 			NPC.setAttack(3);
  			return true;
  		}
 
@@ -60,6 +64,7 @@ public class Human extends Entity {
  			NPC.setName("Deckhand");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
+ 			NPC.setAttack(2);
  			return true;
  		}
 
@@ -67,6 +72,7 @@ public class Human extends Entity {
  			NPC.setName("Swabbie");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
+ 			NPC.setAttack(1);
  			return true;
  		}
  		return false;

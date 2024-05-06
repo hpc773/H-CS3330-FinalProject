@@ -44,5 +44,12 @@ class SkeletonTest {
 		
 		assert(pc.getHealth() == 8 || pc.getHealth() == 6 || pc.getHealth() == 4 || pc.getHealth() == 2 || pc.getHealth() == 0);
 	}
+	
+	@Test
+	void testAttack() {
+		int expecetedValue = pc.getHealth() - skeleton.getAttack();
+		skeleton.attackCharacter(pc);
+		assertEquals(expecetedValue, pc.getHealth());
+	}
 
 }

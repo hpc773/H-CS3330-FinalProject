@@ -20,7 +20,7 @@ public class Zombie extends Entity {
 	 */
 	public int specialAttack(PlayerCharacter PC) {
 		int attackDamage = 5;
-		System.out.println("The"+getName() +"Zombie lunges at you with it's gangrenous mouth agape!");
+		System.out.println("The "+getName() +" Zombie lunges at you with it's gangrenous mouth agape!");
 		int diseaseResist = 50;
 		Random RNG = new Random();
 		
@@ -49,6 +49,7 @@ public class Zombie extends Entity {
  			NPC.setName("Overlord");
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
+ 			NPC.setAttack(6);
  			return true;
  		}
 
@@ -56,6 +57,7 @@ public class Zombie extends Entity {
  			NPC.setName("Lord");
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
+ 			NPC.setAttack(5);
  			return true;
  		}
 
@@ -63,6 +65,7 @@ public class Zombie extends Entity {
  			NPC.setName("Dread");
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
+ 			NPC.setAttack(4);
  			return true;
  		}
 
@@ -70,6 +73,7 @@ public class Zombie extends Entity {
  			NPC.setName("Intact");
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
+ 			NPC.setAttack(3);
  			return true;
  		}
 
@@ -77,6 +81,7 @@ public class Zombie extends Entity {
  			NPC.setName("Headless");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
+ 			NPC.setAttack(2);
  			return true;
  		}
 
@@ -84,6 +89,7 @@ public class Zombie extends Entity {
  			NPC.setName("Immobile");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
+ 			NPC.setAttack(1);
  			return true;
  		}
 		return false;

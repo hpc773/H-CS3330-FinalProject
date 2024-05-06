@@ -76,9 +76,9 @@ public abstract class Entity {
 	 *
 	 * @return returns true if the damage was correctly taken
 	 */
-	protected boolean attackCharacter(PlayerCharacter character) {
+	public boolean attackCharacter(PlayerCharacter character) {
 		
-		character.setHealth(character.getHealth() - regularAttackValue);
+		character.setHealth(character.getHealth() - getAttack());
 		return true;
 	}
 	
@@ -99,7 +99,7 @@ public abstract class Entity {
 	 * @return the player characters amount of experience after execution
 	 */
 	private int grantExp(PlayerCharacter PC) {
-		PC.setExp(PC.getExp()+ this.getExpValue());
+		PC.incrementExp(this.getExpValue());
 		
 		return PC.getExp();
 	}

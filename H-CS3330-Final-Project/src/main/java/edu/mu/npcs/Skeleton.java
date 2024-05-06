@@ -67,6 +67,7 @@ public class Skeleton extends Entity {
  			NPC.setName("King");
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
+ 			NPC.setAttack(6);
  			return true;
  		}
 
@@ -74,6 +75,7 @@ public class Skeleton extends Entity {
  			NPC.setName("Knight");
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
+ 			NPC.setAttack(5);
  			return true;
  		}
 
@@ -81,6 +83,7 @@ public class Skeleton extends Entity {
  			NPC.setName("Squire");
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
+ 			NPC.setAttack(4);
  			return true;
  		}
 
@@ -88,6 +91,7 @@ public class Skeleton extends Entity {
  			NPC.setName("Commoner");
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
+ 			NPC.setAttack(3);
  			return true;
  		}
 
@@ -95,6 +99,7 @@ public class Skeleton extends Entity {
  			NPC.setName("Pauper");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
+ 			NPC.setAttack(2);
  			return true;
  		}
 
@@ -102,6 +107,7 @@ public class Skeleton extends Entity {
  			NPC.setName("Runt");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
+ 			NPC.setAttack(1);
  			return true;
  		}
  		return false;

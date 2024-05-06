@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import edu.mu.characters.PlayerCharacter;
@@ -20,9 +21,28 @@ import org.junit.jupiter.api.Test;
 
 class HumanTest {
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+	private Human human;
+	private PlayerCharacter pc;
 
+	@BeforeEach
+	void setUp(){
+		human = new Human();
+		pc = new PlayerCharacter("Skylar", Races.Dwarf, new Rogue());
+		pc.setHealth(10);
+	}
+	
+	@Test
+	@RepeatedTest(1000)
+	void testSpecialAttack() {
+		human.specialAttack(pc);
+		
+		assertEquals(pc.getHealth(), 5);
+	}
+	
+	@Test
+	void testAttack() {
+		int expecetedValue = pc.getHealth() - human.getAttack();
+		human.attackCharacter(pc);
+		assertEquals(expecetedValue, pc.getHealth());
+	}
 }
