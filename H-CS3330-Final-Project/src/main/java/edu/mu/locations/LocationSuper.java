@@ -1,5 +1,9 @@
 package edu.mu.locations;
 
+import java.util.HashMap;
+
+import edu.mu.characters.PlayerCharacter;
+
 public abstract class LocationSuper {
 
 	protected int strengthMod;
@@ -8,6 +12,10 @@ public abstract class LocationSuper {
 	protected int IntelligenceMod;
 	protected int wisdomMod;
 	protected int charismaMod;
+	
+	protected HashMap<String, Integer> statsBase = new HashMap<String, Integer>();
+	protected HashMap<String, Integer> statsAltered = new HashMap<String, Integer>();
+	
 	public int getStrengthMod() {
 		return strengthMod;
 	}
@@ -45,7 +53,12 @@ public abstract class LocationSuper {
 		this.charismaMod = charismaMod;
 	}
 	
-	
+	/*
+	 * public void TravelTo(PlayerCharacter character) { statsBase =
+	 * character.getStats();
+	 * 
+	 * }
+	 */
 	
 
 }
