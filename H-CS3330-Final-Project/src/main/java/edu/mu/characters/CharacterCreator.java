@@ -45,7 +45,7 @@ public class CharacterCreator{
 		
 		
 		
-		return new PlayerCharacter (name, race, playerClass, playerClass.getStats(), playerClass.getInventory()); // maybe change starting health to be class dependent? idk.
+		return new PlayerCharacter (name, race, playerClass); 
 		
 		
 		

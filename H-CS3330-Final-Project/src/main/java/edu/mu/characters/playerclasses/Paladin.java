@@ -1,7 +1,10 @@
 package edu.mu.characters.playerclasses;
 
+import edu.mu.characters.items.Armor;
+import edu.mu.characters.items.Weapons;
+
 public class Paladin extends PlayerClassSuper {
-	private int attackModifier;
+	
 	private int magicModifier;
 	public Paladin() {
 		super();
@@ -12,9 +15,9 @@ public class Paladin extends PlayerClassSuper {
 		this.stats.put("Wisdom", 12);
 		this.stats.put("Charisma", 14);
 		
-		this.inventory.put("Weapon", "Warhammer");
-		this.inventory.put("Clothing", "Heavy Armor");
-		this.inventory.put("Gold", "250");
+		this.weapon = Weapons.WARHAMMER;
+		this.armor = Armor.HEAVY_ARMOR;
+		
 		
 		double atkDoub = ((Math.floor(stats.get("Strength") - 10) / 2));
 		this.attackModifier = (int)(atkDoub);

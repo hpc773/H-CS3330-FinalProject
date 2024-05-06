@@ -1,7 +1,7 @@
 package edu.mu.npcs;
 
 import edu.mu.characters.*;
-abstract class Entity {
+public abstract class Entity {
 	
 	private String name;
 	private int health;
@@ -27,7 +27,7 @@ abstract class Entity {
 		return health;
 	}
 
-	protected void setHealth(int health) {
+	public void setHealth(int health) {
 		this.health = health;
 	}
 

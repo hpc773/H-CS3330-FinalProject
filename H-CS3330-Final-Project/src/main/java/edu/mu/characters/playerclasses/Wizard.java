@@ -1,7 +1,10 @@
 package edu.mu.characters.playerclasses;
 
+import edu.mu.characters.items.Armor;
+import edu.mu.characters.items.Weapons;
+
 public class Wizard extends PlayerClassSuper {
-	private int attackModifier;
+	
 	private int magicModifier;
 	public Wizard() {
 		super();
@@ -12,9 +15,9 @@ public class Wizard extends PlayerClassSuper {
 		this.stats.put("Wisdom", 10);
 		this.stats.put("Charisma", 12);
 		
-		this.inventory.put("Weapon", "Staff");
-		this.inventory.put("Clothing", "Robe");
-		this.inventory.put("Gold", "250");
+		this.weapon = Weapons.STAFF;
+		this.armor = Armor.ROBE;
+	
 		
 		double atkDoub = ((Math.floor(stats.get("Strength") - 10) / 2));
 		this.attackModifier = (int)(atkDoub);

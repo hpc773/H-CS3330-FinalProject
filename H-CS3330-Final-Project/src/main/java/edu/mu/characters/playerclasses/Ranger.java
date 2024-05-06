@@ -1,7 +1,10 @@
 package edu.mu.characters.playerclasses;
 
+import edu.mu.characters.items.Armor;
+import edu.mu.characters.items.Weapons;
+
 public class Ranger extends PlayerClassSuper {
-	private int attackModifier;
+	
 	public Ranger() {
 		super();
 		this.stats.put("Strength", 12);
@@ -11,9 +14,9 @@ public class Ranger extends PlayerClassSuper {
 		this.stats.put("Wisdom", 13);
 		this.stats.put("Charisma", 10);
 		
-		this.inventory.put("Weapon", "Bow");
-		this.inventory.put("Clothing", "Medium Armor");
-		this.inventory.put("Gold", "250");
+		this.weapon = Weapons.BOW;
+		this.armor = Armor.MEDIUM_ARMOR;
+		
 		double atkDoub = ((Math.floor(stats.get("Dexterity") - 10) / 2));
 		
 		this.attackModifier = (int)(atkDoub);

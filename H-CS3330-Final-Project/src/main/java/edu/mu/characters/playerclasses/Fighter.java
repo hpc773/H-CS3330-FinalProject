@@ -2,8 +2,11 @@ package edu.mu.characters.playerclasses;
 
 import java.util.HashMap;
 
+import edu.mu.characters.items.Armor;
+import edu.mu.characters.items.Weapons;
+
 public class Fighter extends PlayerClassSuper {
-	private int attackModifier;
+	
 	public Fighter() {
 		super();
 		this.stats.put("Strength", 15);
@@ -13,9 +16,9 @@ public class Fighter extends PlayerClassSuper {
 		this.stats.put("Wisdom", 12);
 		this.stats.put("Charisma", 10);
 		
-		this.inventory.put("Weapon", "Sword");
-		this.inventory.put("Clothing", "Medium Armor");
-		this.inventory.put("Gold", "250");
+		this.weapon = Weapons.SWORD;
+		this.armor = Armor.MEDIUM_ARMOR;
+		
 		
 		double atkDoub = ((Math.floor(stats.get("Strength") - 10) / 2));
 		this.attackModifier = (int)(atkDoub);
