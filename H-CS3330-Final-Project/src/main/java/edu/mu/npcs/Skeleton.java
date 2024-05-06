@@ -38,15 +38,15 @@ public class Skeleton extends Entity {
 		}
 		
 		else {
-			if(hit >= 75) {
+			if(hit >= 50) {
 				attackDamage = 8;
 				bodyPart = "liver!";
 			}
-			else if(hit >= 50) {
+			else if(hit >= 25) {
 				attackDamage = 6;
 				bodyPart = "shoulder!";
 			}
-			else if(hit >= 25) {
+			else if(hit >= 12) {
 				attackDamage = 4;
 				bodyPart = "arm!";
 			}
@@ -62,7 +62,7 @@ public class Skeleton extends Entity {
 	protected boolean entityPowerLevel(Entity NPC) {
 		// TODO adjust values to better fit game balance
 		Random RNG = new Random();
- 		this.setPowerLevel(RNG.nextInt(100));
+ 		this.setPowerLevel(RNG.nextInt(101));
  		if(getPowerLevel() == 100) {
  			NPC.setName("King");
  			NPC.setHealth(50);
@@ -91,14 +91,14 @@ public class Skeleton extends Entity {
  			return true;
  		}
 
- 		else if(getPowerLevel() >= 0) {
+ 		else if(getPowerLevel() > 1) {
  			NPC.setName("Pauper");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
  			return true;
  		}
 
- 		else if(getPowerLevel() == 0) {
+ 		else if(getPowerLevel() == 1) {
  			NPC.setName("Runt");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);

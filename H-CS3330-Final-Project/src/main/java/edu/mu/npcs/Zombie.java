@@ -44,7 +44,7 @@ public class Zombie extends Entity {
 	protected boolean entityPowerLevel(Entity NPC) {
 		// TODO Auto-generated method stub
 		Random RNG = new Random();
- 		this.setPowerLevel(RNG.nextInt(100));
+ 		this.setPowerLevel(RNG.nextInt(101));
  		if(getPowerLevel() == 100) {
  			NPC.setName("Overlord");
  			NPC.setHealth(50);
@@ -73,14 +73,14 @@ public class Zombie extends Entity {
  			return true;
  		}
 
- 		else if(getPowerLevel() >= 0) {
+ 		else if(getPowerLevel() > 1) {
  			NPC.setName("Headless");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
  			return true;
  		}
 
- 		else if(getPowerLevel() == 0) {
+ 		else if(getPowerLevel() == 1) {
  			NPC.setName("Immobile");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);

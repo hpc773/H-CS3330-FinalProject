@@ -27,7 +27,7 @@ public class Human extends Entity {
 	protected boolean entityPowerLevel(Entity NPC) {
 		// TODO Auto-generated method stub
 		Random RNG = new Random();
-		this.setPowerLevel(RNG.nextInt(100));
+		this.setPowerLevel(RNG.nextInt(101));
  		if(getPowerLevel() == 100) {
  			NPC.setName("Captain");
  			NPC.setHealth(50);
@@ -56,14 +56,14 @@ public class Human extends Entity {
  			return true;
  		}
 
- 		else if(getPowerLevel() >= 0) {
+ 		else if(getPowerLevel() > 1) {
  			NPC.setName("Deckhand");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
  			return true;
  		}
 
- 		else if(getPowerLevel() == 0) {
+ 		else if(getPowerLevel() == 1) {
  			NPC.setName("Swabbie");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
