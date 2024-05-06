@@ -2,6 +2,8 @@ package edu.mu.test.characters;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import edu.mu.characters.playerclasses.*;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import edu.mu.characters.PlayerCharacter;
 import edu.mu.characters.Races;
+import edu.mu.characters.playerclasses.Paladin;
 
 
 public class PlayerCharacterTest {
@@ -22,6 +25,7 @@ public class PlayerCharacterTest {
 	void setUp() {
 		pc = new PlayerCharacter();
 	}
+	//--GETTERS AND SETTERS--------------------------------
 	@Test
 	@Order(1)
 	@DisplayName("testing name getter/setter")
@@ -58,6 +62,36 @@ public class PlayerCharacterTest {
 		
 		
 	}
+	//now for more complicated ones
+	@Test
+	@Order(5)
+	@DisplayName("testing player class getter/setter")
+	void testsetPlayerClass() {
+		PlayerClassSuper pTest = new Paladin();
+		pc.setPlayerClass(new Paladin());
+		pTest.equals(pc.getPlayerClass());
+		
+		
+	}
+	@Test
+	@Order(6)
+	@DisplayName("testing inventory getter/setter")
+	void testsetInventory() {
+		PlayerClassSuper pTest = new Ranger();
+		pc.setPlayerClass(new Ranger());
+		pTest.getInventory().equals(pc.getInventory());
+	}
+	@Test
+	@Order(6)
+	@DisplayName("testing stats getter/setter")
+	void testsetStats() {
+		PlayerClassSuper pTest = new Wizard();
+		pc.setPlayerClass(new Wizard());
+		pTest.getStats().equals(pc.getStats());
+	}
+	
+	//----------------------------------------------------------
+	
 	
 	
 }
