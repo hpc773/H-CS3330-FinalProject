@@ -29,12 +29,13 @@ public class PlayerCharacter extends Character{
 		this.stats = playerClass.getStats();
 		this.weapon = playerClass.getWeapon();
 		this.armor = playerClass.getArmor();
+		this.defense = armor.getArmorValue();
 		this.playerClass = playerClass;
 		double initDoub = ((Math.floor(stats.get("Dexterity") - 10) / 2));
 		this.initiative = (int)(initDoub);
 		double healDoub = ((Math.floor(stats.get("Constitution") - 10) / 2));
-		this.health = 10 + (int)(healDoub);
-		this.defense = armor.getArmorValue();//need to implement this somehow
+		this.health = 10 + (int)(healDoub) + this.defense;
+		
 		this.expRequired = 10;
 		this.level = 1;
 		this.exp = 0;
