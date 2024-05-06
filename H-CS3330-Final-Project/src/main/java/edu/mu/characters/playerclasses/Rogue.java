@@ -2,6 +2,7 @@ package edu.mu.characters.playerclasses;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public class Rogue extends PlayerClassSuper {
 	
@@ -22,7 +23,9 @@ public class Rogue extends PlayerClassSuper {
 		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
-	public void specialMove() {//sneak attack
-		
+	public void specialMove(Entity e) {
+		System.out.println("Your stealthiness allows you to get off a sneak attack!");
+		int damageAmount = this.getAttackModifier() + this.weapon.getDamage() + 10;
+		e.setHealth(e.getHealth() - damageAmount);
 	}
 }

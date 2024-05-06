@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public abstract class PlayerClassSuper {
 	protected HashMap<String, Integer> stats = new HashMap<String, Integer>();
@@ -47,7 +48,7 @@ public abstract class PlayerClassSuper {
 		this.armor = armor;
 	}
 
-	public void specialMove() {
+	public void specialMove(Entity e) {
 		
 	}
 	public void printStats() {

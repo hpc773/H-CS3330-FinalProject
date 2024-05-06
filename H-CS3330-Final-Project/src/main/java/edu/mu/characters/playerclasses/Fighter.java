@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public class Fighter extends PlayerClassSuper {
 	
@@ -24,7 +25,10 @@ public class Fighter extends PlayerClassSuper {
 		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
-	public void specialMove() {//extra attack, maybe just use the same attack method from playercharacter?
+	public void specialMove(Entity e) {
+		System.out.println("Your incredible skill with a blade allows you to make a second strike!");
+		int damageAmount = this.getAttackModifier() + this.weapon.getDamage();
+		e.setHealth(e.getHealth() - damageAmount);
 		
 	}
 }
