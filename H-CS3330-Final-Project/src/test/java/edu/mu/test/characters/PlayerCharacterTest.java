@@ -144,6 +144,7 @@ public class PlayerCharacterTest {
 	@DisplayName("testing attack")
 	void testAttack() {
 		Entity e = new Skeleton();
+		e.setHealth(1);
 		boolean boolTest = pc.attackEnemy(e);
 		assertEquals(true, boolTest);
 		

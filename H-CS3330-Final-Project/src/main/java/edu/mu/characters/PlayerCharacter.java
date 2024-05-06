@@ -132,6 +132,9 @@ public class PlayerCharacter extends Character{
 	public boolean attackEnemy(Entity e) {
 		int damageAmount = playerClass.getAttackModifier() + this.weapon.getDamage();
 		e.setHealth(e.getHealth() - damageAmount);
+		if(e.getHealth() <= 0) {
+			e.perish(this);
+		}
 		return true;
 		
 	}

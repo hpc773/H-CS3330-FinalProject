@@ -18,8 +18,9 @@ import org.junit.jupiter.api.Test;
 import edu.mu.characters.*;
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
-import edu.mu.characters.playerclasses.Fighter;
+import edu.mu.characters.playerclasses.*;
 import edu.mu.characters.playerclasses.PlayerClassSuper;
+import edu.mu.npcs.*;
 public class PlayerClassTest {
 
 	private PlayerClassSuper pc;
@@ -57,7 +58,42 @@ public class PlayerClassTest {
 	@Test
 	@DisplayName("Testing fighter special move")
 	void testFighterMove() {
+		Entity e = new Skeleton();
+		boolean boolTest = pc.specialMove(e);
+		assertEquals(true, boolTest);
 		
+	}
+	@Test
+	@DisplayName("Testing paladin special move")
+	void testPaladinMove() {
+		pc = new Paladin();
+		Entity e = new Skeleton();
+		boolean boolTest = pc.specialMove(e);
+		assertEquals(true, boolTest);
+		
+	}@Test
+	@DisplayName("Testing ranger special move")
+	void testRangerMove() {
+		pc = new Ranger();
+		Entity e = new Skeleton();
+		boolean boolTest = pc.specialMove(e);
+		assertEquals(true, boolTest);
+		
+	}@Test
+	@DisplayName("Testing rogue special move")
+	void testRogueMove() {
+		pc = new Rogue();
+		Entity e = new Skeleton();
+		boolean boolTest = pc.specialMove(e);
+		assertEquals(true, boolTest);
+		
+	}@Test
+	@DisplayName("Testing wizard special move")
+	void testWizardMove() {
+		pc = new Wizard();
+		Entity e = new Skeleton();
+		boolean boolTest = pc.specialMove(e);
+		assertEquals(true, boolTest);
 		
 	}
 		

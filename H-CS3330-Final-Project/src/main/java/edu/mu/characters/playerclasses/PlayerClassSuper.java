@@ -48,9 +48,7 @@ public abstract class PlayerClassSuper {
 		this.armor = armor;
 	}
 
-	public boolean specialMove(Entity e) {
-		return true;
-	}
+	public abstract boolean specialMove(Entity e);
 	
 
 	public int getAttackModifier() {
