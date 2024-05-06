@@ -125,7 +125,7 @@ public class PlayerCharacter extends Character{
 	
 	
 	
-	
+
 	
 	
 	
@@ -147,7 +147,12 @@ public class PlayerCharacter extends Character{
 
 	
 	}
-
+/**
+ * This is the class that defines the player character, along with all of their fields. It inherits from the Character superclass and depends on the playerclasses package, and is created with the CharacterCreator method.
+ * 
+ * Author: Henry Clark
+ * 
+ */
 
 
 	

@@ -20,7 +20,7 @@ public class CharacterCreator{
 		name = nameCreator();
 		race = raceCreator();
 		PlayerClassEnum playerClassEnumVar = createClass();
-		
+		//kind of an embedded factory design
 		switch(playerClassEnumVar) {
 		case Fighter:
 			playerClass = new Fighter();
@@ -53,7 +53,7 @@ public class CharacterCreator{
 		
 		
 	}
-	private String nameCreator() {
+	public String nameCreator() {
 		String createName;
 		
 		System.out.println("What is your name?");
@@ -74,7 +74,7 @@ public class CharacterCreator{
 		return createName;
 		
 	}
-	private Races raceCreator() {
+	public Races raceCreator() {
 		Races createRace;
 		System.out.println("\nPlease select a playable race. Enter an integer from 1 to 7.");
 		while(true) {
@@ -99,7 +99,7 @@ public class CharacterCreator{
 		}
 		return createRace;
 	}
-	private PlayerClassEnum createClass() {
+	public PlayerClassEnum createClass() {
 		PlayerClassEnum createPClass = null;
 		System.out.println("Please select a playable class.");
 		boolean a;
