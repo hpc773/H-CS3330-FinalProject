@@ -23,10 +23,10 @@ public class Ranger extends PlayerClassSuper {
 		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
-	public void specialMove(Entity e) {
+	public boolean specialMove(Entity e) {
 		System.out.println("Your proficiency with a bow allows you to strike again!");
 		int damageAmount = this.getAttackModifier() + this.weapon.getDamage();
 		e.setHealth(e.getHealth() - damageAmount);
-		
+		return true;
 	}
 }

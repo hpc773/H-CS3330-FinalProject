@@ -12,11 +12,11 @@ public abstract class PlayerClassSuper {
 	protected Armor armor;
 	protected int attackModifier;
 
-	public PlayerClassSuper(HashMap<String, Integer> stats, Weapons weapon, Armor armor ) {
+	/*public PlayerClassSuper(HashMap<String, Integer> stats, Weapons weapon, Armor armor ) {
 		this.stats = stats;
 		this.weapon = weapon;
 		this.armor = armor;
-	}
+	}*/
 	
 	public PlayerClassSuper() {
 		// TODO Auto-generated constructor stub
@@ -48,11 +48,8 @@ public abstract class PlayerClassSuper {
 		this.armor = armor;
 	}
 
-	public void specialMove(Entity e) {
-		
-	}
-	public void printStats() {
-		stats.forEach((k,v)->System.out.println(k+": "+ v));
+	public boolean specialMove(Entity e) {
+		return true;
 	}
 	
 

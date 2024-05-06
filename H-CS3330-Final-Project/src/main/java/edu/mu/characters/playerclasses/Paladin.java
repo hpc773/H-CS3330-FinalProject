@@ -26,10 +26,10 @@ public class Paladin extends PlayerClassSuper {
 		this.magicModifier = (int)(mgcDoub);
 	}
 	@Override
-	public void specialMove(Entity e) {
+	public boolean specialMove(Entity e) {
 		System.out.println("The power of your oath allows you to make an empowered strike!");
-		int damageAmount = this.getAttackModifier() + this.weapon.getDamage() + 5;
+		int damageAmount = this.getAttackModifier() + this.weapon.getDamage() + 5 + this.magicModifier;
 		e.setHealth(e.getHealth() - damageAmount);
-		
+		return true;
 	}
 }

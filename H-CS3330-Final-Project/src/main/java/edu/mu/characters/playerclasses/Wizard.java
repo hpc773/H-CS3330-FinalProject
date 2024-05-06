@@ -39,10 +39,10 @@ public class Wizard extends PlayerClassSuper {
 
 
 	@Override
-	public void specialMove(Entity e) {
+	public boolean specialMove(Entity e) {
 		System.out.println("You cast a fireball, to devastating effect!");
 		int damageAmount = this.getMagicModifier() + 7;
 		e.setHealth(e.getHealth() - damageAmount);
-		
+		return true;
 	}
 }

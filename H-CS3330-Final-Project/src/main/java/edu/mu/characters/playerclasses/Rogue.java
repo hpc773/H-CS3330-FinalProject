@@ -23,9 +23,10 @@ public class Rogue extends PlayerClassSuper {
 		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
-	public void specialMove(Entity e) {
+	public boolean specialMove(Entity e) {
 		System.out.println("Your stealthiness allows you to get off a sneak attack!");
 		int damageAmount = this.getAttackModifier() + this.weapon.getDamage() + 10;
 		e.setHealth(e.getHealth() - damageAmount);
+		return true;
 	}
 }
