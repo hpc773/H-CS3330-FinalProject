@@ -3,6 +3,7 @@ package edu.mu.characters.playerclasses;
 import java.util.HashMap;
 
 public class Fighter extends PlayerClassSuper {
+	private int attackModifier;
 	public Fighter() {
 		super();
 		this.stats.put("Strength", 15);
@@ -15,12 +16,14 @@ public class Fighter extends PlayerClassSuper {
 		this.inventory.put("Weapon", "Sword");
 		this.inventory.put("Clothing", "Medium Armor");
 		this.inventory.put("Gold", "250");
+		
+		double atkDoub = ((Math.floor(stats.get("Strength") - 10) / 2));
+		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
 	public void specialMove() {//extra attack
 		
 	}
-	
-	//HashMap<String, Integer> stats, HashMap<String, String> inventory
-	//stats, inventory
 }
+	
+	

@@ -1,6 +1,8 @@
 package edu.mu.characters.playerclasses;
 
 public class Rogue extends PlayerClassSuper {
+	
+	private int attackModifier;
 	public Rogue() {
 		super();
 		this.stats.put("Strength", 8);
@@ -13,6 +15,8 @@ public class Rogue extends PlayerClassSuper {
 		this.inventory.put("Weapon", "Dagger");
 		this.inventory.put("Clothing", "Light Armor");
 		this.inventory.put("Gold", "500");//start w more gold, life as a thief?
+		double atkDoub = ((Math.floor(stats.get("Dexterity") - 10) / 2));
+		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
 	public void specialMove() {//sneak attack
