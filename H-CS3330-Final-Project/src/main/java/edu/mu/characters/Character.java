@@ -21,6 +21,28 @@ abstract class Character {
 		this.race = race;
 		
 		this.health = health;
+	
+	}
+	public Character() {
+		
+	}
+	
+	
+	
+	
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Races getRace() {
+		return race;
+	}
+	public void setRace(Races race) {
+		this.race = race;
 	}
 	public void setHealth(int newHealth) {
 		this.health = newHealth;

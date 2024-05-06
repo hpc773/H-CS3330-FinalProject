@@ -20,7 +20,13 @@ public class PlayerCharacter extends Character{
 		this.playerClass = playerClass;
 		
 	}
-
+	public PlayerCharacter() {
+		
+	}
+	
+	
+	
+	
 	
 	
 	public void printStats() {
@@ -30,6 +36,43 @@ public class PlayerCharacter extends Character{
 		inventory.forEach((k,v)->System.out.println(k+": "+ v));
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public HashMap<String, Integer> getStats() {
+		return stats;
+	}
+	public void setStats(HashMap<String, Integer> stats) {
+		this.stats = stats;
+	}
+	public HashMap<String, String> getInventory() {
+		return inventory;
+	}
+	public void setInventory(HashMap<String, String> inventory) {
+		this.inventory = inventory;
+	}
+	public PlayerClassSuper getPlayerClass() {
+		return playerClass;
+	}
+	public void setPlayerClass(PlayerClassSuper playerClass) {
+		this.playerClass = playerClass;
+	}
 	public void setExp(int newExp) {
 		this.exp = newExp;
 	}
