@@ -53,7 +53,7 @@ public class CharacterCreator{
 		
 		
 	}
-	public String nameCreator() {
+	private String nameCreator() {
 		String createName;
 		
 		System.out.println("What is your name?");
@@ -74,7 +74,7 @@ public class CharacterCreator{
 		return createName;
 		
 	}
-	public Races raceCreator() {
+	private Races raceCreator() {
 		Races createRace;
 		System.out.println("\nPlease select a playable race. Enter an integer from 1 to 7.");
 		while(true) {
@@ -99,7 +99,7 @@ public class CharacterCreator{
 		}
 		return createRace;
 	}
-	public PlayerClassEnum createClass() {
+	private PlayerClassEnum createClass() {
 		PlayerClassEnum createPClass = null;
 		System.out.println("Please select a playable class.");
 		boolean a;

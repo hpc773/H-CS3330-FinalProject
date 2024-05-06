@@ -24,7 +24,7 @@ public class Fighter extends PlayerClassSuper {
 		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
-	public void specialMove() {//extra attack
+	public void specialMove() {//extra attack, maybe just use the same attack method from playercharacter?
 		
 	}
 }

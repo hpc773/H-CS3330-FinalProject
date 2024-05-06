@@ -16,6 +16,7 @@ public class PlayerCharacter extends Character{
 	private int exp;
 	private int initiative;
 	private int defense;
+	private HashMap<String, String> inventory = new HashMap<String, String>();
 
 
 	
@@ -25,6 +26,7 @@ public class PlayerCharacter extends Character{
 		super(name, race);
 		this.stats = playerClass.getStats();
 		this.weapon = playerClass.getWeapon();
+		this.armor = playerClass.getArmor();
 		this.playerClass = playerClass;
 		double initDoub = ((Math.floor(stats.get("Dexterity") - 10) / 2));
 		this.initiative = (int)(initDoub);
@@ -76,10 +78,18 @@ public class PlayerCharacter extends Character{
 	public void setInitiative(int initiative) {
 		this.initiative = initiative;
 	}
-	
-	
-	
-	
+	public int getDefense() {
+		return defense;
+	}
+	public void setDefense(int defense) {
+		this.defense = defense;
+	}
+	public HashMap<String, String> getInventory() {
+		return inventory;
+	}
+	public void setInventory(HashMap<String, String> inventory) {
+		this.inventory = inventory;
+	}
 	public Weapons getWeapon() {
 		return weapon;
 	}
@@ -93,15 +103,23 @@ public class PlayerCharacter extends Character{
 		this.armor = armor;
 	}
 	//actions
+	//method that handles when the player dies--we can do more with this to restart fight or something else
 	public boolean perish() {
 		System.out.println("You died!");
 		return true;
 	}
+	//method player uses to attack, changing enemy health
 	public boolean attackEnemy(Entity e) {
 		int damageAmount = playerClass.getAttackModifier() + this.weapon.getDamage();
 		e.setHealth(e.getHealth() - damageAmount);
 		return true;
 		
+	}
+	@Override
+	public String toString() {
+		return "PlayerCharacter [stats=" + stats + ", weapon=" + weapon + ", armor=" + armor + ", playerClass="
+				+ playerClass + ", exp=" + exp + ", initiative=" + initiative + ", defense=" + defense + ", inventory="
+				+ inventory + ", name=" + name + ", race=" + race + ", health=" + health + "]";
 	}
 	
 	
