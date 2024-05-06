@@ -16,6 +16,8 @@ import org.junit.jupiter.api.Test;
 
 
 import edu.mu.characters.*;
+import edu.mu.characters.playerclasses.PlayerClassSuper;
 public class PlayerClassTest {
 
+	private PlayerClassSuper pc;
 }

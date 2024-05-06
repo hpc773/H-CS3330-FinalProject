@@ -16,6 +16,8 @@ public class PlayerCharacter extends Character{
 	private int exp;
 	private int initiative;
 	private int defense;
+	private int level;
+	private int expRequired;
 	//private HashMap<String, String> inventory = new HashMap<String, String>();
 
 
@@ -33,7 +35,9 @@ public class PlayerCharacter extends Character{
 		double healDoub = ((Math.floor(stats.get("Constitution") - 10) / 2));
 		this.health = 10 + (int)(healDoub);
 		this.defense = armor.getArmorValue();//need to implement this somehow
-		
+		this.expRequired = 10;
+		this.level = 1;
+		this.exp = 0;
 		
 		
 	}
@@ -57,9 +61,14 @@ public class PlayerCharacter extends Character{
 	}
 	public void setExp(int newExp) {
 		this.exp = newExp;
-	}
+		
+		}
+	
 	public void incrementExp(int incExp) {
 		this.exp += incExp;
+		while(this.getExp() >= this.getExpRequired()) {
+			levelUp();
+		}
 	}
 	public int getExp() {
 		return this.exp;
@@ -96,6 +105,23 @@ public class PlayerCharacter extends Character{
 	public void setArmor(Armor armor) {
 		this.armor = armor;
 	}
+	
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getExpRequired() {
+		return expRequired;
+	}
+
+	public void setExpRequired(int expRequired) {
+		this.expRequired = expRequired;
+	}
+
+
 	//actions
 	//method that handles when the player dies--we can do more with this to restart fight or something else
 	public boolean perish() {
@@ -109,6 +135,23 @@ public class PlayerCharacter extends Character{
 		return true;
 		
 	}
+	public void levelUp() {
+		System.out.println("Level up!");
+		setLevel(getLevel()+1);
+		this.stats.put("Strength", stats.get("Strength")+1);
+		this.stats.put("Dexterity", stats.get("Dexterity")+1);
+		this.stats.put("Constitution", stats.get("Constitution")+1);
+		this.stats.put("Intelligence", stats.get("Intelligence")+1);
+		this.stats.put("Wisdom", stats.get("Wisdom")+1);
+		this.stats.put("Charisma", stats.get("Charisma")+1);
+		setExpRequired(getExpRequired() + 5);
+		
+	}
+	
+	
+	
+	
+	
 	@Override
 	public String toString() {
 		return "PlayerCharacter [stats=" + stats + ", weapon=" + weapon + ", armor=" + armor + ", playerClass="

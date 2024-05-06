@@ -17,9 +17,7 @@ abstract class Character {
 		
 
 	}
-	public Character() {
-		
-	}
+
 	
 	public String getName() {
 		return name;

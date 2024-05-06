@@ -12,6 +12,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
+import com.jparams.verifier.tostring.ToStringVerifier;
+
 import edu.mu.characters.PlayerCharacter;
 import edu.mu.characters.Races;
 import edu.mu.characters.items.Armor;
@@ -147,6 +149,24 @@ public class PlayerCharacterTest {
 		
 		
 	}
+	@Test
+	@Order(13)
+	@DisplayName("testing toString")
+	void testToString() {
+		ToStringVerifier.forClass(PlayerCharacter.class).verify();
+		
+		
+	}
+	@Test
+	@Order(14)
+	@DisplayName("testing health incrementor")
+	void testIncHeal() {
+		pc.setHealth(20);
+		pc.incrementHealth(10);
+		assertEquals(30, pc.getHealth());
+	}
+	
+	
 	
 	
 		
