@@ -85,7 +85,7 @@ public abstract class Entity {
 	/** Method that triggers when the entity dies, gives the player character experience
 	 * 
 	 * @param PlayerCharacter PC
-	 * @return returns 
+	 * @return returns true if the Entity did indead perish
 	 */
 	public boolean perish(PlayerCharacter PC) {
 		grantExp(PC);
@@ -104,9 +104,13 @@ public abstract class Entity {
 		return PC.getExp();
 	}
 	
-	
+	/** A special attack that each entity subclass has, each subclass will have a special effect tied to it
+	 * 
+	 * @param the player character PC
+	 * @return
+	 */
 	public abstract int specialAttack(PlayerCharacter PC);
 	
-	protected abstract void entityPowerLevel(Entity NPC);
+	protected abstract boolean entityPowerLevel(Entity NPC);
 	
 }
