@@ -2,6 +2,9 @@ package edu.mu.npcs;
 
 import java.util.Random;
 
+import edu.mu.characters.*;
+
+
 public class Human extends Entity {
 
 	Human(){
@@ -10,8 +13,10 @@ public class Human extends Entity {
 	}
 	
 	@Override
-	public int specialAttack() {
-		// TODO Auto-generated method stub
+	public int specialAttack(PlayerCharacter PC) {
+		
+		System.out.println("The Pirate" + getName() + "viciouslt attakc with his cutlass!");
+		
 		return 0;
 	}
 

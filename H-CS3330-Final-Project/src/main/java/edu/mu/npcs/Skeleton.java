@@ -1,6 +1,9 @@
 package edu.mu.npcs;
 import java.util.Random;
 
+import edu.mu.characters.*;
+
+
 /**Skeleton enemy class
  * 
  * @author skylarperry
@@ -19,7 +22,7 @@ public class Skeleton extends Entity {
 	 * 
 	 * @return returns the damage that was done with the attack
 	 */
-	public int specialAttack() {
+	public int specialAttack(PlayerCharacter PC) {
 		int stunResist = 75;
 		int attackDamage = 2;
 		String bodyPart = "left foot";

@@ -2,6 +2,8 @@ package edu.mu.npcs;
 
 import java.util.Random;
 
+import edu.mu.characters.*;
+
 public class Zombie extends Entity {
 	
 	public Zombie() {
@@ -16,7 +18,7 @@ public class Zombie extends Entity {
 	 * 
 	 * @return the attack damage that the attack does, which is always five
 	 */
-	public int specialAttack() {
+	public int specialAttack(PlayerCharacter PC) {
 		int attackDamage = 5;
 		System.out.println("The"+getName() +"Zombie lunges at you with it's gangrenous mouth agape!");
 		int diseaseResist = 50;

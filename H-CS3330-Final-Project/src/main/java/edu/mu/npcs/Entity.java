@@ -105,7 +105,7 @@ public abstract class Entity {
 	}
 	
 	
-	public abstract int specialAttack();
+	public abstract int specialAttack(PlayerCharacter PC);
 	
 	protected abstract void entityPowerLevel(Entity NPC);
 	
