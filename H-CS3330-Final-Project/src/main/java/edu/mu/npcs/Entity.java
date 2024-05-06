@@ -85,7 +85,7 @@ public abstract class Entity {
 	/** Method that triggers when the entity dies, gives the player character experience
 	 * 
 	 * @param PlayerCharacter PC
-	 * @return returns true if the Entity did indead perish
+	 * @return returns true if the Entity did indeed perish
 	 */
 	public boolean perish(PlayerCharacter PC) {
 		grantExp(PC);
