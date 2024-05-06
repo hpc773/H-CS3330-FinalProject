@@ -50,6 +50,10 @@ public class PlayerCharacter extends Character{
 	public HashMap<String, Integer> getStats() {
 		return stats;
 	}
+	public void setStats(HashMap<String, Integer> stats) {
+		this.stats = stats;
+		
+	}
 
 	
 	
