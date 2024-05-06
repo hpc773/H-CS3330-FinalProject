@@ -13,6 +13,7 @@ public class PlayerCharacter extends Character{
 	
 	
 	
+	
 	public PlayerCharacter(String name, Races race, PlayerClassSuper playerClass, int health, HashMap<String, Integer> stats, HashMap<String,String> inventory) {
 		super(name, race, health);
 		this.stats = stats;
