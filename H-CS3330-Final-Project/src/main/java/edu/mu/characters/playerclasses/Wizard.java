@@ -2,6 +2,7 @@ package edu.mu.characters.playerclasses;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public class Wizard extends PlayerClassSuper {
 	
@@ -25,8 +26,16 @@ public class Wizard extends PlayerClassSuper {
 		this.magicModifier = (int)(mgcDoub);
 		
 	}
+	
+	
+
+
+
 	@Override
-	public void specialMove() {//idk, the ability to use magic?
-		
+	public boolean specialMove(Entity e) {
+		System.out.println("You cast a fireball, to devastating effect!");
+		int damageAmount = this.magicModifier + 7;
+		e.setHealth(e.getHealth() - damageAmount);
+		return true;
 	}
 }

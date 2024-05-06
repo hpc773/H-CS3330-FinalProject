@@ -17,11 +17,13 @@ import org.junit.jupiter.api.Test;
 
 import edu.mu.characters.*;
 public class CharacterCreatorTest {
-	private CharacterCreator cc;
+	private CharacterCreator cc;	
+	Scanner scan = new Scanner(System.in);
 
 	@BeforeEach
 	void setUp() {
 		cc = new CharacterCreator();
+		
 		
 		
 		
@@ -35,11 +37,11 @@ public class CharacterCreatorTest {
 	@DisplayName("testing name creator")
 	void testnameCreator() {
 		
-		String input = "Henry";
+		/*String input = "Henry";
 		InputStream in = new ByteArrayInputStream(input.getBytes());
-		System.setIn(in);
+		System.setIn(in);*/
 		
-		assertEquals("Henry", cc.nameCreator() );
+		assertEquals(scan.nextLine(), cc.nameCreator() );
 		
 		
 	}

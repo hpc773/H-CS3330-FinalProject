@@ -12,8 +12,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
+import com.jparams.verifier.tostring.ToStringVerifier;
+
 import edu.mu.characters.PlayerCharacter;
 import edu.mu.characters.Races;
+import edu.mu.characters.items.Armor;
+import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.*;
 
 
 
@@ -23,8 +28,12 @@ public class PlayerCharacterTest {
 	
 	@BeforeEach
 	void setUp() {
-		pc = new PlayerCharacter();
+		pc = new PlayerCharacter("Jane", Races.Gnome, new Ranger());
 	}
+	
+	//CONSTRUCTOR----------------------------------------
+	
+	
 	//--GETTERS AND SETTERS--------------------------------
 	@Test
 	@Order(1)
@@ -77,18 +86,16 @@ public class PlayerCharacterTest {
 	@Order(6)
 	@DisplayName("testing weapon getter/setter")
 	void testsetWeapon() {
-		PlayerClassSuper pTest = new Ranger();
-		pc.setPlayerClass(new Ranger());
-		pTest.getWeapon().equals(pc.getWeapon());
+		pc.setWeapon(Weapons.BOW);
+		assertEquals(Weapons.BOW, pc.getWeapon());
 		
 	}
 	@Test
 	@Order(7)
 	@DisplayName("testing armor getter/setter")
 	void testsetArmor() {
-		PlayerClassSuper pTest = new Ranger();
-		pc.setPlayerClass(new Ranger());
-		pTest.getArmor().equals(pc.getArmor());
+		pc.setArmor(Armor.ROBE);
+		assertEquals(Armor.ROBE, pc.getArmor());
 	}
 	@Test
 	@Order(8)
@@ -98,6 +105,75 @@ public class PlayerCharacterTest {
 		pc.setPlayerClass(new Wizard());
 		pTest.getStats().equals(pc.getStats());
 	}
+	@Test
+	@Order(9)
+	@DisplayName("testing exp incrementor")
+	void testIncExp() {
+		pc.setExp(20);
+		pc.incrementExp(10);
+		assertEquals(30, pc.getExp());
+	}
+	@Test
+	@Order(10)
+	@DisplayName("testing initiative getter/setter")
+	void testInit() {
+		pc.setInitiative(10);
+		assertEquals(10, pc.getInitiative());
+		
+		
+	}
+	@Test
+	@Order(11)
+	@DisplayName("testing defense getter/setter")
+	void testDefense() {
+		pc.setDefense(10);
+		assertEquals(10, pc.getDefense());
+		
+		
+	}
+	
+	@Test
+	@Order(12)
+	@DisplayName("testing perish")
+	void testPerish() {
+		boolean boolTest = pc.perish();
+		assertEquals(true, boolTest);
+	}
+	@Test
+	@Order(13)
+	@DisplayName("testing attack")
+	void testAttack() {
+		Entity e = new Skeleton();
+		e.setHealth(1);
+		boolean boolTest = pc.attackEnemy(e);
+		assertEquals(true, boolTest);
+		
+		
+	}
+	@Test
+	@Order(13)
+	@DisplayName("testing toString")
+	void testToString() {
+		ToStringVerifier.forClass(PlayerCharacter.class).verify();
+		
+		
+	}
+	@Test
+	@Order(14)
+	@DisplayName("testing health incrementor")
+	void testIncHeal() {
+		pc.setHealth(20);
+		pc.incrementHealth(10);
+		assertEquals(30, pc.getHealth());
+	}
+	
+	
+	
+	
+		
+		
+
+	
 	
 	//----------------------------------------------------------
 	

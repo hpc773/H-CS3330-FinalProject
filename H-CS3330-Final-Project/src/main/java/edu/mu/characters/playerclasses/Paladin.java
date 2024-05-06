@@ -2,6 +2,7 @@ package edu.mu.characters.playerclasses;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public class Paladin extends PlayerClassSuper {
 	
@@ -25,7 +26,10 @@ public class Paladin extends PlayerClassSuper {
 		this.magicModifier = (int)(mgcDoub);
 	}
 	@Override
-	public void specialMove() {//smite
-		
+	public boolean specialMove(Entity e) {
+		System.out.println("The power of your oath allows you to make an empowered strike!");
+		int damageAmount = this.getAttackModifier() + this.weapon.getDamage() + 5 + this.magicModifier;
+		e.setHealth(e.getHealth() - damageAmount);
+		return true;
 	}
 }

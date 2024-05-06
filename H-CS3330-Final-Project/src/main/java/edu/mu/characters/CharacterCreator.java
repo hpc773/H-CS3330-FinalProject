@@ -20,7 +20,7 @@ public class CharacterCreator{
 		name = nameCreator();
 		race = raceCreator();
 		PlayerClassEnum playerClassEnumVar = createClass();
-		
+		//kind of an embedded factory design
 		switch(playerClassEnumVar) {
 		case Fighter:
 			playerClass = new Fighter();
@@ -140,7 +140,7 @@ public class CharacterCreator{
 					break;
 				case 3://ranger
 					System.out.println("Rangers live in the wilderness, using their knowledge of nature and skill with archery to hunt their prey, human or animal."
-							+ " They are equipped with Medium Armor, a bow, and."//finish this one...... maybe the ability to appear "invisible" to enemies/hiding?
+							+ " They are equipped with Medium Armor, a bow, and are able to strike twice with their bow."
 							+ "\nTheir stat distribution is:"
 							+ "\nStrength: 12"
 							+ "\nDexterity: 15"

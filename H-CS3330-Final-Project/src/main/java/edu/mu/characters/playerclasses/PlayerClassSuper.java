@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public abstract class PlayerClassSuper {
 	protected HashMap<String, Integer> stats = new HashMap<String, Integer>();
@@ -11,11 +12,11 @@ public abstract class PlayerClassSuper {
 	protected Armor armor;
 	protected int attackModifier;
 
-	public PlayerClassSuper(HashMap<String, Integer> stats, Weapons weapon, Armor armor ) {
+	/*public PlayerClassSuper(HashMap<String, Integer> stats, Weapons weapon, Armor armor ) {
 		this.stats = stats;
 		this.weapon = weapon;
 		this.armor = armor;
-	}
+	}*/
 	
 	public PlayerClassSuper() {
 		// TODO Auto-generated constructor stub
@@ -47,12 +48,7 @@ public abstract class PlayerClassSuper {
 		this.armor = armor;
 	}
 
-	public void specialMove() {
-		
-	}
-	public void printStats() {
-		stats.forEach((k,v)->System.out.println(k+": "+ v));
-	}
+	public abstract boolean specialMove(Entity e);
 	
 
 	public int getAttackModifier() {

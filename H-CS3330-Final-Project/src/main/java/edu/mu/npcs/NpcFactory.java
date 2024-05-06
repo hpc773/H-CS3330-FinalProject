@@ -5,7 +5,7 @@ package edu.mu.npcs;
  * @author skylarperry
  */
 public class NpcFactory {
-	Entity spawnNPC(NpcType type){
+	public Entity spawnNPC(NpcType type){
 		Entity newNpc;
 		switch (type){
 		case ZOMBIE:
@@ -14,9 +14,10 @@ public class NpcFactory {
 			newNpc = new Skeleton();
 		case HUMAN:
 			newNpc = new Human();
-		case UNIQUE:
-			newNpc = new Unique();
+		default:
+			newNpc = null;
 		}
 		return newNpc;
 	}
 }
+	

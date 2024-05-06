@@ -2,6 +2,7 @@ package edu.mu.characters.playerclasses;
 
 import edu.mu.characters.items.Armor;
 import edu.mu.characters.items.Weapons;
+import edu.mu.npcs.Entity;
 
 public class Ranger extends PlayerClassSuper {
 	
@@ -22,7 +23,10 @@ public class Ranger extends PlayerClassSuper {
 		this.attackModifier = (int)(atkDoub);
 	}
 	@Override
-	public void specialMove() {//extra attack but for bows
-		
+	public boolean specialMove(Entity e) {
+		System.out.println("Your proficiency with a bow allows you to strike again!");
+		int damageAmount = this.getAttackModifier() + this.weapon.getDamage();
+		e.setHealth(e.getHealth() - damageAmount);
+		return true;
 	}
 }

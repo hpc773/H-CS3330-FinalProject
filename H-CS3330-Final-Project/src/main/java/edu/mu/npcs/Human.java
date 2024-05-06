@@ -2,16 +2,21 @@ package edu.mu.npcs;
 
 import java.util.Random;
 
+import edu.mu.characters.*;
+
+
 public class Human extends Entity {
 
-	Human(){
+	public Human(){
 		this.setType(NpcType.HUMAN);
 		entityPowerLevel(this);
 	}
 	
 	@Override
-	public int specialAttack() {
-		// TODO Auto-generated method stub
+	public int specialAttack(PlayerCharacter PC) {
+		
+		System.out.println("The Pirate " + getName() + " viciously attacks with their cutlass!");
+		
 		return 0;
 	}
 
@@ -19,51 +24,58 @@ public class Human extends Entity {
 	 * 
 	 */
 	@Override
-	protected void entityPowerLevel(Entity NPC) {
+	protected boolean entityPowerLevel(Entity NPC) {
 		// TODO Auto-generated method stub
 		Random RNG = new Random();
- 		int powerLevel = RNG.nextInt(100);
- 		if(powerLevel == 100) {
+		this.setPowerLevel(RNG.nextInt(101));
+ 		if(getPowerLevel() == 100) {
  			NPC.setName("Captain");
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
- 			NPC.setMoneyValue(100);
+ 			NPC.setAttack(6);
+ 			return true;
  		}
 
- 		else if(powerLevel >= 75) {
+ 		else if(getPowerLevel() >= 75) {
  			NPC.setName("First Mate");
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
- 			NPC.setMoneyValue(75);
+ 			NPC.setAttack(5);
+ 			return true;
  		}
 
- 		else if(powerLevel >= 50 ) {
+ 		else if(getPowerLevel() >= 50 ) {
  			NPC.setName("Rapscallion");
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
- 			NPC.setMoneyValue(50);
+ 			NPC.setAttack(4);
+ 			return true;
  		}
 
- 		else if(powerLevel >= 25 ) {
+ 		else if(getPowerLevel() >= 25 ) {
  			NPC.setName("Crewmate");
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
- 			NPC.setMoneyValue(25);
+ 			NPC.setAttack(3);
+ 			return true;
  		}
 
- 		else if(powerLevel >= 0) {
+ 		else if(getPowerLevel() > 1) {
  			NPC.setName("Deckhand");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
- 			NPC.setMoneyValue(10);
+ 			NPC.setAttack(2);
+ 			return true;
  		}
 
- 		else if(powerLevel == 0) {
+ 		else if(getPowerLevel() == 1) {
  			NPC.setName("Swabbie");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
- 			NPC.setMoneyValue(1);		
+ 			NPC.setAttack(1);
+ 			return true;
  		}
+ 		return false;
 		
 	}
 }

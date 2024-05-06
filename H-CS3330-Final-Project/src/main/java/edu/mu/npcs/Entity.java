@@ -15,7 +15,7 @@ public abstract class Entity {
 	private int health;
 	private int regularAttackValue;
 	private int expValue;
-	private int moneyValue;
+	private int powerLevel;
 	NpcType Type;
 	
 
@@ -54,13 +54,13 @@ public abstract class Entity {
 	protected void setExpValue(int expValue) {
 		this.expValue = expValue;
 	}
-
-	public int getMoneyValue() {
-		return moneyValue;
+	
+	public int getPowerLevel() {
+		return powerLevel;
 	}
 
-	protected void setMoneyValue(int moneyValue) {
-		this.moneyValue = moneyValue;
+	protected void setPowerLevel(int powerLevel) {
+		this.powerLevel = powerLevel;
 	}
 	
 	public NpcType getType() {
@@ -76,16 +76,16 @@ public abstract class Entity {
 	 *
 	 * @return returns true if the damage was correctly taken
 	 */
-	protected boolean attackCharacter(PlayerCharacter character) {
+	public boolean attackCharacter(PlayerCharacter character) {
 		
-		character.setHealth(character.getHealth() - regularAttackValue);
+		character.setHealth(character.getHealth() - getAttack());
 		return true;
 	}
 	
 	/** Method that triggers when the entity dies, gives the player character experience
 	 * 
 	 * @param PlayerCharacter PC
-	 * @return returns 
+	 * @return returns true if the Entity did indeed perish
 	 */
 	public boolean perish(PlayerCharacter PC) {
 		grantExp(PC);
@@ -99,14 +99,18 @@ public abstract class Entity {
 	 * @return the player characters amount of experience after execution
 	 */
 	private int grantExp(PlayerCharacter PC) {
-		PC.setExp(PC.getExp()+ this.getExpValue());
+		PC.incrementExp(this.getExpValue());
 		
 		return PC.getExp();
 	}
 	
+	/** A special attack that each entity subclass has, each subclass will have a special effect tied to it
+	 * 
+	 * @param the player character PC
+	 * @return
+	 */
+	public abstract int specialAttack(PlayerCharacter PC);
 	
-	public abstract int specialAttack();
-	
-	protected abstract void entityPowerLevel(Entity NPC);
+	protected abstract boolean entityPowerLevel(Entity NPC);
 	
 }
