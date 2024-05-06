@@ -1,8 +1,11 @@
 package edu.mu.characters.playerclasses;
 
+import edu.mu.characters.items.Armor;
+import edu.mu.characters.items.Weapons;
+
 public class Rogue extends PlayerClassSuper {
 	
-	private int attackModifier;
+	
 	public Rogue() {
 		super();
 		this.stats.put("Strength", 8);
@@ -12,9 +15,9 @@ public class Rogue extends PlayerClassSuper {
 		this.stats.put("Wisdom", 12);
 		this.stats.put("Charisma", 14);
 		
-		this.inventory.put("Weapon", "Dagger");
-		this.inventory.put("Clothing", "Light Armor");
-		this.inventory.put("Gold", "500");//start w more gold, life as a thief?
+		this.weapon = Weapons.DAGGER;
+		this.armor = Armor.LIGHT_ARMOR;
+	
 		double atkDoub = ((Math.floor(stats.get("Dexterity") - 10) / 2));
 		this.attackModifier = (int)(atkDoub);
 	}

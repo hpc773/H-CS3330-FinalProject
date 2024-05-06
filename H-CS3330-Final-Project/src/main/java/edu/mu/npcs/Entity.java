@@ -1,13 +1,15 @@
 package edu.mu.npcs;
 
 import edu.mu.characters.*;
+
 /**
  * This is the abstract superclass for all NPCs, it has the name, health value, attack damage, and experience value, as well as a type.
  * 
  * 
  * @author skylarperry
  */
-abstract class Entity {
+public abstract class Entity {
+
 	
 	private String name;
 	private int health;
@@ -33,7 +35,7 @@ abstract class Entity {
 		return health;
 	}
 
-	protected void setHealth(int health) {
+	public void setHealth(int health) {
 		this.health = health;
 	}
 

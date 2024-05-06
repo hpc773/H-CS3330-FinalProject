@@ -75,14 +75,23 @@ public class PlayerCharacterTest {
 	}
 	@Test
 	@Order(6)
-	@DisplayName("testing inventory getter/setter")
-	void testsetInventory() {
+	@DisplayName("testing weapon getter/setter")
+	void testsetWeapon() {
 		PlayerClassSuper pTest = new Ranger();
 		pc.setPlayerClass(new Ranger());
-		pTest.getInventory().equals(pc.getInventory());
+		pTest.getWeapon().equals(pc.getWeapon());
+		
 	}
 	@Test
-	@Order(6)
+	@Order(7)
+	@DisplayName("testing armor getter/setter")
+	void testsetArmor() {
+		PlayerClassSuper pTest = new Ranger();
+		pc.setPlayerClass(new Ranger());
+		pTest.getArmor().equals(pc.getArmor());
+	}
+	@Test
+	@Order(8)
 	@DisplayName("testing stats getter/setter")
 	void testsetStats() {
 		PlayerClassSuper pTest = new Wizard();
