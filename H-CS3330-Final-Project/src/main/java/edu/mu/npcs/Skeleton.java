@@ -59,48 +59,41 @@ public class Skeleton extends Entity {
 	protected void entityPowerLevel(Entity NPC) {
 		// TODO adjust values to better fit game balance
 		Random RNG = new Random();
- 		int powerLevel = RNG.nextInt(100);
-
- 		if(powerLevel == 100) {
+ 		this.setPowerLevel(RNG.nextInt(100));
+ 		if(getPowerLevel() == 100) {
  			NPC.setName("King");
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
- 			NPC.setMoneyValue(100);
  		}
 
- 		else if(powerLevel >= 75) {
+ 		else if(getPowerLevel() >= 75) {
  			NPC.setName("Knight");
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
- 			NPC.setMoneyValue(75);
  		}
 
- 		else if(powerLevel >= 50 ) {
+ 		else if(getPowerLevel() >= 50 ) {
  			NPC.setName("Squire");
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
- 			NPC.setMoneyValue(50);
  		}
 
- 		else if(powerLevel >= 25 ) {
+ 		else if(getPowerLevel() >= 25 ) {
  			NPC.setName("Commoner");
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
- 			NPC.setMoneyValue(25);
  		}
 
- 		else if(powerLevel >= 0) {
+ 		else if(getPowerLevel() >= 0) {
  			NPC.setName("Pauper");
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
- 			NPC.setMoneyValue(10);
  		}
 
- 		else if(powerLevel == 0) {
+ 		else if(getPowerLevel() == 0) {
  			NPC.setName("Runt");
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
- 			NPC.setMoneyValue(1);		
  		}
  	}
  }

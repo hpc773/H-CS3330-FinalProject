@@ -15,7 +15,7 @@ public abstract class Entity {
 	private int health;
 	private int regularAttackValue;
 	private int expValue;
-	private int moneyValue;
+	private int powerLevel;
 	NpcType Type;
 	
 
@@ -54,13 +54,13 @@ public abstract class Entity {
 	protected void setExpValue(int expValue) {
 		this.expValue = expValue;
 	}
-
-	public int getMoneyValue() {
-		return moneyValue;
+	
+	public int getPowerLevel() {
+		return powerLevel;
 	}
 
-	protected void setMoneyValue(int moneyValue) {
-		this.moneyValue = moneyValue;
+	protected void setPowerLevel(int powerLevel) {
+		this.powerLevel = powerLevel;
 	}
 	
 	public NpcType getType() {
