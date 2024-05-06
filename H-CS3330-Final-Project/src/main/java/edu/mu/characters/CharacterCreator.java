@@ -7,8 +7,9 @@ import edu.mu.characters.playerclasses.PlayerClassEnum;
 import edu.mu.characters.playerclasses.*;
 
 public class CharacterCreator{
+	final Scanner in = new Scanner(System.in);
 	public PlayerCharacter createCharacter() {
-		Scanner in = new Scanner(System.in);
+		
 		String name;
 		Races race;
 		PlayerClassSuper playerClass = null;
@@ -16,9 +17,9 @@ public class CharacterCreator{
 		
 		System.out.println("Welcome to the character creator.");
 		
-		name = nameCreator(in);
-		race = raceCreator(in);
-		PlayerClassEnum playerClassEnumVar = createClass(in);
+		name = nameCreator();
+		race = raceCreator();
+		PlayerClassEnum playerClassEnumVar = createClass();
 		
 		switch(playerClassEnumVar) {
 		case Fighter:
@@ -44,7 +45,7 @@ public class CharacterCreator{
 		
 		
 		
-		return new PlayerCharacter (name, race, playerClass, 10, playerClass.getStats(), playerClass.getInventory()); // maybe change starting health to be class dependent? idk.
+		return new PlayerCharacter (name, race, playerClass, playerClass.getStats(), playerClass.getInventory()); // maybe change starting health to be class dependent? idk.
 		
 		
 		
@@ -52,7 +53,7 @@ public class CharacterCreator{
 		
 		
 	}
-	public String nameCreator(Scanner in) {
+	public String nameCreator() {
 		String createName;
 		
 		System.out.println("What is your name?");
@@ -73,7 +74,7 @@ public class CharacterCreator{
 		return createName;
 		
 	}
-	public Races raceCreator(Scanner in) {
+	public Races raceCreator() {
 		Races createRace;
 		System.out.println("\nPlease select a playable race. Enter an integer from 1 to 7.");
 		while(true) {
@@ -98,7 +99,7 @@ public class CharacterCreator{
 		}
 		return createRace;
 	}
-	public PlayerClassEnum createClass(Scanner in) {
+	public PlayerClassEnum createClass() {
 		PlayerClassEnum createPClass = null;
 		System.out.println("Please select a playable class.");
 		boolean a;

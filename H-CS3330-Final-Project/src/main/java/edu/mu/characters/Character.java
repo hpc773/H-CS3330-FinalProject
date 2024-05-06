@@ -16,11 +16,11 @@ abstract class Character {
 	//private HashMap<String, Integer> stats;
 	protected int health;
 	
-	public Character(String name, Races race, int health) {
+	public Character(String name, Races race ) {
 		this.name = name;
 		this.race = race;
 		
-		this.health = health;
+		
 	
 	}
 	public Character() {
