@@ -3,14 +3,15 @@ package edu.mu.locations;
 import java.util.Scanner;
 
 import edu.mu.characters.PlayerCharacter;
-import edu.mu.locations.Forest;
+
+
 
 public class LocationCurrent {
 	
 
 	
 	
-	
+	LocationType currentLocation = LocationType.BASE;
 	
 	
 	
@@ -28,12 +29,16 @@ public class LocationCurrent {
 			
 			switch (choice) {
 			    case 1:
+			    	leave(currentLocation, character);
 			    	travelToForest(character);
+			    	currentLocation = LocationType.FOREST;
 			        return LocationType.FOREST;
 			    case 2:
+			    	leave(currentLocation, character);
 			    	travelToMountain(character);
 			        return LocationType.MOUNTAIN;
 			    case 3:
+			    	leave(currentLocation, character);
 			    	travelToDesert(character);
 			        return LocationType.DESERT;
 			    default:
@@ -64,7 +69,38 @@ public class LocationCurrent {
         System.out.println("You traveled to the Desert.");
         
     }
-	
+    
+    private void leaveForest(PlayerCharacter character) {
+    	Forest forest = new Forest();
+    	forest.Depart(character);
+    	System.out.println("Leaving Forest... \n");
+    }
+    private void leaveMountain(PlayerCharacter character) {
+    	Mountain mountain = new Mountain();
+    	mountain.Depart(character);
+    	System.out.println("Leaving Mountain... \n");
+    	
+    }
+    private void leaveDesert(PlayerCharacter character) {
+    	Desert desert = new Desert();
+    	desert.Depart(character);
+    	System.out.println("Leaving Desert... \n");
+    	
+    }
+	private void leave (LocationType current, PlayerCharacter character) {
+		switch(current) {
+		case FOREST:
+			leaveForest(character);
+			break;
+		case MOUNTAIN:
+			leaveMountain(character);
+			break;
+		case DESERT:
+			leaveDesert(character);
+			break;
+		default:
+		}
+	}
 	
 	
 
