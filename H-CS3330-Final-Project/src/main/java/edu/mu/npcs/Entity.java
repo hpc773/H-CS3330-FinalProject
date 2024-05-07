@@ -16,7 +16,7 @@ public abstract class Entity {
 	private int regularAttackValue;
 	private int expValue;
 	private int powerLevel;
-	private int dexterity;
+	private int initative;
 	NpcType Type;
 	
 
@@ -33,11 +33,11 @@ public abstract class Entity {
 	}
 	
 	public int getDexterity() {
-		return dexterity;
+		return initative;
 	}
 	
-	protected void setDexterity(int dexterity) {
-		this.dexterity = dexterity;
+	protected void setInitative(int initative) {
+		this.initative = initative;
 		}
 
 	public int getHealth() {
