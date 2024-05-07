@@ -7,7 +7,7 @@ public class Attack {
 	public void startFight() {
 		//identify character 
 		boolean playStunned;
-		ints turnsOfDisease;
+		int turnsOfDisease;
 		System.out.println("You approach.");
 		
 		while (boolean a = true) {
