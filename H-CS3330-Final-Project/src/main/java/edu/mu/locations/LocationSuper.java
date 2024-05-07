@@ -53,6 +53,49 @@ public abstract class LocationSuper {
 		this.charismaMod = charismaMod;
 	}
 	
+	public void Apply(PlayerCharacter character) {
+		statsBase = character.getStats();
+		statsAltered = character.getStats();
+		if (statsAltered.containsKey("Dexterity")) {
+            int current = statsAltered.get("Dexterity");
+            statsAltered.put("Dexterity", current + dexMod);
+            
+        }
+		if (statsAltered.containsKey("Strength")) {
+            int current = statsAltered.get("Strength");
+            statsAltered.put("Strength", current + strengthMod);
+            
+        }
+		if (statsAltered.containsKey("Wisdom")) {
+            int current = statsAltered.get("Wisdom");
+            statsAltered.put("Wisdom", current + wisdomMod);
+            
+        }
+		if (statsAltered.containsKey("Intelligence")) {
+            int current = statsAltered.get("Intelligence");
+            statsAltered.put("Intelligence", current + IntelligenceMod);
+          
+        }
+		if (statsAltered.containsKey("Constitution")) {
+            int current = statsAltered.get("Constitution");
+            statsAltered.put("Constitution", current + constitutionMod);
+            
+        }
+		if (statsAltered.containsKey("Charisma")) {
+            int current = statsAltered.get("Charisma");
+            statsAltered.put("Charisma", current + charismaMod);
+            
+        }
+		character.setStats(statsAltered);
+		
+		
+	}
+
+	
+	public void Depart(PlayerCharacter character) {
+		character.setStats(statsBase);
+	
+	}
 	/*
 	 * public void TravelTo(PlayerCharacter character) { statsBase =
 	 * character.getStats();
