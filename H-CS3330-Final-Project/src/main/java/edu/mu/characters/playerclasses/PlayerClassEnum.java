@@ -1,5 +1,10 @@
 package edu.mu.characters.playerclasses;
 
+/**
+ * This enum contains all of the playable classes. This enum is only used when creating a character, in the CharacterCreator.classFactory method.
+ * 
+ * @author Henry Clark
+ */
 public enum PlayerClassEnum {
 Fighter,//15, 13, 14, 8, 12, 10
 Paladin,//15, 8, 13, 10, 12, 14

@@ -1,11 +1,15 @@
 package edu.mu.characters.items;
 
+/**
+ * This enum contains all of the weapons that the individual classes use. Each element has a damage value that can be obtained using the getter method. The damage value is used in the calculation of the character's attack damage.
+ * @author Henry Clark
+ */
 public enum Weapons {
-STAFF(1),
-BOW(4),
-DAGGER(3),
-SWORD(4),
-WARHAMMER(6),;
+STAFF(2),
+BOW(5),
+DAGGER(4),
+SWORD(5),
+WARHAMMER(7),;
 
 private int damage;
 
