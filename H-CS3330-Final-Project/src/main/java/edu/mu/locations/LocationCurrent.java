@@ -36,10 +36,12 @@ public class LocationCurrent {
 			    case 2:
 			    	leave(currentLocation, character);
 			    	travelToMountain(character);
+			    	currentLocation = LocationType.MOUNTAIN;
 			        return LocationType.MOUNTAIN;
 			    case 3:
 			    	leave(currentLocation, character);
 			    	travelToDesert(character);
+			    	currentLocation = LocationType.DESERT;
 			        return LocationType.DESERT;
 			    default:
 			        System.out.println("Invalid choice. Defaulting to Forest.");
