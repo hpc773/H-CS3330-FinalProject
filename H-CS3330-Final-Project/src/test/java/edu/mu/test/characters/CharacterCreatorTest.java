@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
+import edu.mu.characters.playerclasses.*;
 
 
 import org.junit.jupiter.api.AfterAll;
@@ -35,13 +36,56 @@ public class CharacterCreatorTest {
 	@Test
 	@Order(1)
 	@DisplayName("testing name creator")
-	void testnameCreator() {
-		
+	void testNameCreator() {
+		String nameTest = null;
 		/*String input = "Henry";
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);*/
+		String name = cc.nameCreator();
+		System.out.println("Enter the same name as above to test the method.");
+		while(true) {
+			nameTest = scan.nextLine();
+			if(!nameTest.equals(name)) {
+				System.out.println("\nPlease enter the same string.");
+				continue;
+			}
+			break;
+		}
+		assertEquals(name, nameTest );
 		
-		assertEquals(scan.nextLine(), cc.nameCreator() );
+		
+	}
+	@Test
+	@Order(2)
+	@DisplayName("testing race creator")
+	void testRaceCreator() {
+		
+		
+		Races race = cc.raceCreator();
+		assertEquals(race.getClass(), Races.class);
+		
+		
+	}
+	@Test
+	@Order(3)
+	@DisplayName("testing player class creator")
+	void testClassCreator() {
+		
+		
+		PlayerClassEnum pClass = cc.createClass();
+		assertEquals(pClass.getClass(), PlayerClassEnum.class);
+		
+		
+	}
+	@Test
+	@Order(4)
+	@DisplayName("testing player class factory")
+	void testClassFactory() {
+		PlayerClassSuper test = new Paladin();
+		PlayerClassSuper pc = cc.classFactory(PlayerClassEnum.Paladin);
+		pc.equals(test);
+		
+		
 		
 		
 	}

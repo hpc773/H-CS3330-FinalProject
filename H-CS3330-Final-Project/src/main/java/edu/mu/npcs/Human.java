@@ -33,6 +33,7 @@ public class Human extends Entity {
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
  			NPC.setAttack(6);
+ 			NPC.setInitative(14);
  			return true;
  		}
 
@@ -41,6 +42,7 @@ public class Human extends Entity {
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
  			NPC.setAttack(5);
+ 			NPC.setInitative(12);
  			return true;
  		}
 
@@ -49,6 +51,7 @@ public class Human extends Entity {
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
  			NPC.setAttack(4);
+ 			NPC.setInitative(10);
  			return true;
  		}
 
@@ -57,6 +60,7 @@ public class Human extends Entity {
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
  			NPC.setAttack(3);
+ 			NPC.setInitative(8);
  			return true;
  		}
 
@@ -65,6 +69,7 @@ public class Human extends Entity {
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
  			NPC.setAttack(2);
+ 			NPC.setInitative(5);
  			return true;
  		}
 
@@ -73,6 +78,7 @@ public class Human extends Entity {
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
  			NPC.setAttack(1);
+ 			NPC.setInitative(1);
  			return true;
  		}
  		return false;

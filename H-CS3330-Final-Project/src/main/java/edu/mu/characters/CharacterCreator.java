@@ -21,37 +21,12 @@ public class CharacterCreator{
 		race = raceCreator();
 		PlayerClassEnum playerClassEnumVar = createClass();
 		//kind of an embedded factory design
-		switch(playerClassEnumVar) {
-		case Fighter:
-			playerClass = new Fighter();
-			break;
-		case Paladin:
-			playerClass = new Paladin();
-			break;
-		case Ranger:
-			playerClass = new Ranger();
-			break;
-		case Rogue:
-			playerClass = new Rogue();
-			break;
-		case Wizard:
-			playerClass = new Wizard();
-			break;
-		default:
-		}
+		playerClass = classFactory(playerClassEnumVar);
 		System.out.println("Character Created!");		
 		
-		
-		
-		
-		
+	
 		return new PlayerCharacter (name, race, playerClass); 
-		
-		
-		
-		
-		
-		
+	
 	}
 	public String nameCreator() {
 		String createName;
@@ -183,12 +158,35 @@ public class CharacterCreator{
 			}
 			catch(Exception e) {
 				System.out.println("Please enter an integer between 1-5.");
-				System.out.println(e.getMessage());
+
 				
 				continue;
 			}
 		}
 		return createPClass;
+	}
+	public PlayerClassSuper classFactory(PlayerClassEnum classEnum) {
+		PlayerClassSuper playerClass = null;
+		switch(classEnum) {
+		case Fighter:
+			playerClass = new Fighter();
+			break;
+		case Paladin:
+			playerClass = new Paladin();
+			break;
+		case Ranger:
+			playerClass = new Ranger();
+			break;
+		case Rogue:
+			playerClass = new Rogue();
+			break;
+		case Wizard:
+			playerClass = new Wizard();
+			break;
+		default:
+		}
+		return playerClass;
+		
 	}
 	
 }
