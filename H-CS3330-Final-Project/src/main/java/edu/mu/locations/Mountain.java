@@ -1,46 +1,16 @@
 package edu.mu.locations;
 
-import edu.mu.characters.PlayerCharacter;
+
 
 public class Mountain extends LocationSuper {
 
-	protected int strengthMod;
-	protected int dexMod;
-	protected int constitutionMod;
-	protected int IntelligenceMod;
-	protected int wisdomMod;
-	protected int charismaMod;
+	protected int strengthMod = -2;
+	protected int dexMod = -1;
+	protected int constitutionMod = 0;
+	protected int IntelligenceMod = 0;
+	protected int wisdomMod = 2;
+	protected int charismaMod = -1;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	public void Apply(PlayerCharacter character) {
-		statsBase = character.getStats();
-		statsAltered = character.getStats();
-		if (statsAltered.containsKey("Dexterity")) {
-            int currentDex = statsAltered.get("Dexterity");
-            statsAltered.put("Dexterity", currentDex - 1);
-            character.setStats(statsAltered);
-            
-        }
-		
-		
-	}
-
-	
-	public void Depart(PlayerCharacter character) {
-		character.setStats(statsBase);
-	
-	}
 	
 	
 
