@@ -16,6 +16,7 @@ public abstract class Entity {
 	private int regularAttackValue;
 	private int expValue;
 	private int powerLevel;
+	private int dexterity;
 	NpcType Type;
 	
 
@@ -30,6 +31,14 @@ public abstract class Entity {
 	protected void setName(String name) {
 		this.name = name;
 	}
+	
+	public int getDexterity() {
+		return dexterity;
+	}
+	
+	protected void setDexterity(int dexterity) {
+		this.dexterity = dexterity;
+		}
 
 	public int getHealth() {
 		return health;

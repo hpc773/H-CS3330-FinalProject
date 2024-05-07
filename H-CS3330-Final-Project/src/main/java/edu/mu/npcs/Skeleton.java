@@ -68,6 +68,7 @@ public class Skeleton extends Entity {
  			NPC.setHealth(50);
  			NPC.setExpValue(50);
  			NPC.setAttack(6);
+ 			NPC.setDexterity(12);
  			return true;
  		}
 
@@ -76,6 +77,7 @@ public class Skeleton extends Entity {
  			NPC.setHealth(40);
  			NPC.setExpValue(35);
  			NPC.setAttack(5);
+ 			NPC.setDexterity(11);
  			return true;
  		}
 
@@ -84,6 +86,7 @@ public class Skeleton extends Entity {
  			NPC.setHealth(30);
  			NPC.setExpValue(25);
  			NPC.setAttack(4);
+ 			NPC.setDexterity(10);
  			return true;
  		}
 
@@ -92,6 +95,7 @@ public class Skeleton extends Entity {
  			NPC.setHealth(20);
  			NPC.setExpValue(15);
  			NPC.setAttack(3);
+ 			NPC.setDexterity(7);
  			return true;
  		}
 
@@ -100,6 +104,7 @@ public class Skeleton extends Entity {
  			NPC.setHealth(10);
  			NPC.setExpValue(10);
  			NPC.setAttack(2);
+ 			NPC.setDexterity(4);
  			return true;
  		}
 
@@ -108,6 +113,7 @@ public class Skeleton extends Entity {
  			NPC.setHealth(1);
  			NPC.setExpValue(1);
  			NPC.setAttack(1);
+ 			NPC.setDexterity(1);
  			return true;
  		}
  		return false;
