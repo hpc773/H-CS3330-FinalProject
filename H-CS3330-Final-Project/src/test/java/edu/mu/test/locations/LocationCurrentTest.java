@@ -21,11 +21,18 @@ import edu.mu.characters.Races;
 import org.junit.jupiter.api.Test;
 
 class LocationCurrentTest {
-	public static void main(String[] args) {
-        PlayerCharacter player = new PlayerCharacter("John", Races.Human, new Fighter());
-        LocationCurrent locationCurrent = new LocationCurrent();
-        
-        System.out.println("Initial stats:");
+	
+	PlayerCharacter player;
+    LocationCurrent locationCurrent;
+	
+	@BeforeEach
+	void setUp(){
+		player = new PlayerCharacter("John", Races.Human, new Fighter());
+        locationCurrent = new LocationCurrent();
+	}
+	@Test
+	void testchooseLocation() {
+		System.out.println("Initial stats:");
         System.out.println("Player Stats: " + player.getStats());
         System.out.println("------------------");
         
@@ -34,11 +41,13 @@ class LocationCurrentTest {
         System.out.println("------------------");
         System.out.println("Updated stats:");
         System.out.println("Player Stats: " + player.getStats());
-    }
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
+		
 	}
+        
+        
+       
+    
+
+	
 
 }
