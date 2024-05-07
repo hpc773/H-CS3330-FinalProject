@@ -6,6 +6,13 @@ import java.util.Scanner;
 import edu.mu.characters.playerclasses.PlayerClassEnum;
 import edu.mu.characters.playerclasses.*;
 
+
+/**
+ * This is the class that contains the methods that creates the PlayerCharacter object. It has one overall method that is called to create the the object, with four smaller methods that are run to define each parameter passed to the PlayerCharacter object.
+ * createClass() and classFactory() work together as an instance of factory design, where the user selects a PlayerClassEnum in createClass and the enum is then used in the classFactory method to create one of five objects, each with the same parent but different individual attributes.
+ * 
+ * @author Henry Clark
+ */
 public class CharacterCreator{
 	final Scanner in = new Scanner(System.in);
 	public PlayerCharacter createCharacter() {
@@ -49,6 +56,7 @@ public class CharacterCreator{
 		return createName;
 		
 	}
+	
 	public Races raceCreator() {
 		Races createRace;
 		System.out.println("\nPlease select a playable race. Enter an integer from 1 to 7.");

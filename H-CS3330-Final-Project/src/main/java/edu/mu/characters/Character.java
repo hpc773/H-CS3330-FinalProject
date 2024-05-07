@@ -1,5 +1,8 @@
 package edu.mu.characters;
-
+/**
+ * This is the parent class of the PlayerCharacter class. 
+ * @author Henry Clark
+ */
 import java.util.HashMap;
 
 import edu.mu.characters.playerclasses.PlayerClassEnum;

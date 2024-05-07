@@ -12,11 +12,7 @@ public abstract class PlayerClassSuper {
 	protected Armor armor;
 	protected int attackModifier;
 
-	/*public PlayerClassSuper(HashMap<String, Integer> stats, Weapons weapon, Armor armor ) {
-		this.stats = stats;
-		this.weapon = weapon;
-		this.armor = armor;
-	}*/
+	
 	
 	public PlayerClassSuper() {
 		// TODO Auto-generated constructor stub
