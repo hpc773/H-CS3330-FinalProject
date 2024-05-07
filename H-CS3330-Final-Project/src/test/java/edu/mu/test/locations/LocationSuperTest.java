@@ -1,7 +1,5 @@
 package edu.mu.test.locations;
 
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import edu.mu.characters.playerclasses.*;
@@ -21,7 +19,7 @@ import edu.mu.characters.Races;
 
 import org.junit.jupiter.api.Test;
 
-class ForestTest {
+class LocationSuperTest {
 
 	@Test
 	void test() {
