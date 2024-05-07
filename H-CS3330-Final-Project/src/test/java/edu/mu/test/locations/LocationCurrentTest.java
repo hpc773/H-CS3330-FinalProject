@@ -31,7 +31,8 @@ class LocationCurrentTest {
         locationCurrent = new LocationCurrent();
 	}
 	@Test
-	void testchooseLocation() {
+	@Order(1)
+	void testchooseLocationForest() {
 		System.out.println("Initial stats:");
         System.out.println("Player Stats: " + player.getStats());
         System.out.println("------------------");
@@ -43,6 +44,13 @@ class LocationCurrentTest {
         System.out.println("Player Stats: " + player.getStats());
 		
 	}
+	
+        
+		
+
+	
+	
+	
         
         
        
